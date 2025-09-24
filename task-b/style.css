@@ -40,3 +40,18 @@ footer {
   padding: 1rem 0;
   margin-top: 20px;
 }
+a {
+  color: #007BFF;   /* bright blue */
+  text-decoration: none; /* removes underline */
+}
+
+/* When hovering */
+a:hover {
+  color: #FF5733;   /* orange */
+  text-decoration: underline; /* underline only on hover */
+}
+
+/* When clicked/visited */
+a:visited {
+  color: #800011;   /* purple */
+}
