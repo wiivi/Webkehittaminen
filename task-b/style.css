@@ -17,7 +17,7 @@ body {
 
 header {
   background: #333;
-  color: #1184a7;
+  color: #131414;
   padding: 1rem 0;
   text-align: center;
 }
@@ -28,7 +28,7 @@ header {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background: #fff;
+  background: #26aabb;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
