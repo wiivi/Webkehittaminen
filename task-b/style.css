@@ -21,8 +21,14 @@ header {
   padding: 1rem 0;
   text-align: center;
 }
-
-
+ul li {
+  list-style-type: square; /* [Function: Custom bullet style] */
+  color: #000000;
+}
+ol li {
+  list-style-type: decimal-leading-zero; /* [Function: Custom ordered list style] */
+  color: #020202;
+}
 
 .container {
   max-width: 900px;
