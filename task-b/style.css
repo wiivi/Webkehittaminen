@@ -16,8 +16,8 @@ body {
 }
 
 header {
-  background: #333;
-  color: #131414;
+  background: #028e8e;
+  color: #000000;
   padding: 1rem 0;
   text-align: center;
 }
@@ -28,14 +28,14 @@ header {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background: #26aabb;
+  background: #bee8ee;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 footer {
-  background: #333;
-  color: #fff;
+  background: #028e8e;
+  color: #000000;
   text-align: center;
   padding: 1rem 0;
   margin-top: 20px;
