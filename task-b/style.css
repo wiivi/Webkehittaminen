@@ -22,22 +22,7 @@ header {
   text-align: center;
 }
 
-nav {
-  background: #444;
-  display: flex;
-  justify-content: center;
-}
 
-nav a {
-  color: #fff;
-  padding: 1rem;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background: #666;
-}
 
 .container {
   max-width: 900px;
