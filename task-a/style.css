@@ -7,6 +7,11 @@ body, h1, p {
   margin: 0;
   padding: 0;
 }
+h1{
+  color:darkblue;
+  font-size 36px;
+  text-align:center;
+  }
 
 body {
   font-family: Arial, sans-serif;
@@ -20,6 +25,10 @@ header {
   color: #fff;
   padding: 1rem 0;
   text-align: center;
+}
+
+p {
+  color: #333; 
 }
 
 nav {
