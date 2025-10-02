@@ -33,12 +33,12 @@ audio, video {
 /* Add spacing between sections */
 h2 {
   margin-top: 40px;
-  text-align: center;
+  text-align: left;
 }
 
 p {
   margin: 40px auto;
   max-width: 600px;
-  text-align: center;
+  text-align: left;
   line-height: 1.6;
 }
