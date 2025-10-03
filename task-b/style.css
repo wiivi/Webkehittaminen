@@ -11,10 +11,15 @@ body, h1, p {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #f4f4f4;
+  background-color: #f4f4f4;
   color: #333;
 }
-
+h1 {
+  color: #ffffff;          /* white text to contrast the teal header */
+  font-size: 2.5rem;       /* make the name stand out */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 header {
   background: #028e8e;
   color: #000000;
