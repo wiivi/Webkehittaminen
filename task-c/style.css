@@ -32,7 +32,7 @@ audio, video {
 
 /* Add spacing between sections */
 h2 {
-  margin-top: 40px;
+  margin-top: 60px 0 20px;
   text-align: left;
 }
 
@@ -43,7 +43,3 @@ p {
   line-height: 1.6;
 }
 
-section {
-  margin: 60px 0; /* adds space above and below each section */
-  text-align: center;
-}
