@@ -46,8 +46,9 @@ p {
 
 section {
   margin-top: 100px; /* adds space above and below each section */
-  margin-bottom: 150px;
+  margin-bottom: 300px;
   padding: 20px;
   text-align: center;
 }
+
 
