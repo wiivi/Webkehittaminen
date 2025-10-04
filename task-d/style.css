@@ -1,0 +1,55 @@
+h1 {
+color: #2c3e50;
+text-align: center;
+}
+
+p {
+font-size: 1rem;
+line-height: 1.5;
+color: #333;
+}
+
+/* Class selector styling */
+.box {
+border: 2px solid #3498db;
+padding: 1rem;
+margin: 1rem 0;
+border-radius: 8px;
+}
+
+.highlight {
+background-color: #f1c40f;
+padding: 0.2rem 0.4rem;
+}
+
+/* ID selector styling */
+#special-message {
+font-weight: bold;
+font-size: 1.2rem;
+color: #e74c3c;
+}
+
+/* Group selector styling */
+h1, h2, h3 {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Descendant selector styling */
+section ul li {
+list-style-type: square;
+margin-left: 1.5rem;
+color: #555;
+}
+
+/* Attribute selector styling */
+a[target] {
+color: #2980b9;
+text-decoration: underline;
+}
+
+img[alt] {
+border: 3px solid #ccc;
+border-radius: 10px;
+display: block;
+margin: 1rem auto;
+}
