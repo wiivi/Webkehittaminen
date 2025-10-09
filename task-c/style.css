@@ -27,7 +27,7 @@ img {
 audio, video {
   display: block;
   margin: 20px auto; /* center + spacing */
-  max-width: 100%;
+  max-width: 500px;
 }
 
 /* Add spacing between sections */
