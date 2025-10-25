@@ -1,7 +1,6 @@
 // index.js
 // Author: Wiivi Röning
 // Date: 2025-10-25
-// Handles adding new course rows with day marks (✅/❌)
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registrationForm");
