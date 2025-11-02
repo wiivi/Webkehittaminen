@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration page - Task H</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+
+  <!--
+    Author: Wiivi Röning
+    Date: 2025-11-02
+  -->
+
+  <body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6">
+    <h1 class="text-2xl font-bold text-center">Registration Page</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 container mx-auto px-4 md:px-12 lg:px-24 py-8">
+    <div class="flex flex-col md:flex-row gap-6">
+
+      <!-- Left info panel -->
+      <section
+        class="flex-1 bg-white shadow-md rounded-xl border border-slate-300 p-4 md:max-w-sm md:sticky md:top-8">
+        <h2 class="text-lg font-semibold mb-2">Info</h2>
+        <p class="text-sm leading-relaxed">Fill out the form to register. All fields are required and validated before
+          adding your entry to the table.</p>
+      </section>
+
+      <!-- Registration form -->
+      <section class="flex-1 bg-white shadow-md rounded-xl border border-slate-300 p-6">
+        <h2 class="text-xl font-semibold mb-4">Register</h2>
+
+        <form id="registrationForm" novalidate class="space-y-4">
+          <input type="hidden" id="timestamp" name="timestamp" />
+
+          <!-- Full name -->
+          <div>
+            <label for="fullName" class="block font-medium mb-1">Full name</label>
+            <input id="fullName" name="fullName" type="text" required placeholder="e.g., Ada Lovelace"
+              class="w-full border border-slate-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <p id="error-name" class="text-red-600 text-sm mt-1"></p>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block font-medium mb-1">Email</label>
+            <input id="email" name="email" type="email" required placeholder="e.g., ada@example.com"
+              class="w-full border border-slate-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <p id="error-email" class="text-red-600 text-sm mt-1"></p>
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="block font-medium mb-1">Phone number</label>
+            <input id="phone" name="phone" type="tel" required placeholder="+358401234567"
+              class="w-full border border-slate-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <p class="text-slate-500 text-xs mt-1">Format: +358 followed by 7–10 digits</p>
+            <p id="error-phone" class="text-red-600 text-sm mt-1"></p>
+          </div>
+
+          <!-- Birth date -->
+          <div>
+            <label for="birthDate" class="block font-medium mb-1">Birth date</label>
+            <input id="birthDate" name="birthDate" type="date" required
+              class="w-full border border-slate-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <p id="error-birth" class="text-red-600 text-sm mt-1"></p>
+          </div>
+
+          <!-- Terms -->
+          <div class="flex items-start gap-2">
+            <input id="terms" name="terms" type="checkbox" required
+              class="mt-1 w-4 h-4 border border-slate-400 rounded">
+            <label for="terms" class="text-sm leading-tight">I accept the terms and conditions</label>
+          </div>
+          <p id="error-terms" class="text-red-600 text-sm mt-1"></p>
+
+          <!-- Buttons -->
+          <div class="flex gap-3 pt-2">
+            <button type="submit"
+              class="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-md font-medium transition">Register</button>
+            <button type="reset"
+              class="border border-slate-300 px-4 py-2 rounded-md hover:bg-slate-100 transition">Clear</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white border border-slate-300 rounded-xl shadow-md mt-8 p-4 overflow-x-auto">
+      <table class="min-w-full text-sm text-left border-collapse">
+        <thead class="bg-blue-900 text-white">
+          <tr>
+            <th class="py-2 px-3">Timestamp</th>
+            <th class="py-2 px-3">Full Name</th>
+            <th class="py-2 px-3">Email</th>
+            <th class="py-2 px-3">Phone</th>
+            <th class="py-2 px-3">Birth Date</th>
+          </tr>
+        </thead>
+        <tbody id="registrations" class="[&>tr:nth-child(even)]:bg-slate-50"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="text-center text-xs text-slate-500 py-4">
+    &copy; 2025 Wiivi Röning
+  </footer>
+</body>
+
+</html>
