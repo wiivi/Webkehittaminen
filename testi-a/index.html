@@ -16,19 +16,56 @@
     }
 
     h1 {
-      margin-top: 30px;
+      margin-top: 0;
+      color: #0046ad;
+      font-size: 2rem;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .info-section {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .info-section p {
+      font-size: 1rem;
       color: #333;
-      text-align: center;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #0046ad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #00348a;
     }
 
     .calendar {
-      width: 90%;
+      flex: 1 1 300px;
+      width: 100%;
       max-width: 400px;
       background: rgb(249, 247, 247);
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       padding: 20px;
-      margin: 20px auto;
     }
 
     .month {
@@ -155,22 +192,30 @@
       font-size: 1.3rem;
       text-decoration: none;
     }
-
   </style>
 </head>
 <body>
-  <h1>Ajanvarauskalenteri</h1>
-  <div class="calendar">
-    <div class="month">
-      <button id="prev">&#10094;</button>
-      <h2 id="month-year"></h2>
-      <button id="next">&#10095;</button>
+
+  <main>
+    <div class="info-section">
+      <p><a href="#" style="color:#0046ad; text-decoration:none;">Etusivu</a> / <a href="#" style="color:#0046ad; text-decoration:none;">Vastaanottomme</a> / <a href="#" style="color:#0046ad; text-decoration:none;">Kokkola</a> / Hieronta Kokkola</p>
+      <h1>Hieronta Kokkola</h1>
+      <p>Rela-hierojien Kokkolan vastaanottomme palvelee neljän hoitohuoneen voimin kauppakeskus Chydeniassa. Vastaanottomme löydät kauppakeskus Chydenian alimmasta kerroksesta KappAhlia vastapäätä. Carpark1 samassa rakennuksessa, jossa parkkikiekolla saa 3h ilmaista pysäköintiaikaa.</p>
+      <a href="#" class="btn">Varaa aika</a>
     </div>
-    <div class="weekdays">
-      <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+
+    <div class="calendar">
+      <div class="month">
+        <button id="prev">&#10094;</button>
+        <h2 id="month-year"></h2>
+        <button id="next">&#10095;</button>
+      </div>
+      <div class="weekdays">
+        <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+      </div>
+      <div class="days" id="days"></div>
     </div>
-    <div class="days" id="days"></div>
-  </div>
+  </main>
 
   <!-- Alapalkki -->
   <footer>
@@ -237,7 +282,7 @@
 
       const firstDay = new Date(year, month, 1);
       const lastDay = new Date(year, month + 1, 0);
-      const firstWeekDay = (firstDay.getDay() + 6) % 7; // Ma=0, Su=6
+      const firstWeekDay = (firstDay.getDay() + 6) % 7;
 
       const monthNames = [
         "Tammikuu","Helmikuu","Maaliskuu","Huhtikuu","Toukokuu","Kesäkuu",
@@ -245,7 +290,6 @@
       ];
 
       monthYear.textContent = `${monthNames[month]} ${year}`;
-
       daysContainer.innerHTML = "";
 
       for (let i = 0; i < firstWeekDay; i++) {
