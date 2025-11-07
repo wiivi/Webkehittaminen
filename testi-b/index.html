@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajanvarauskalenteri</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Ylävalikko */
+    .navbar {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-top: 5px;
+    }
+
+    /* Kalenteri + teksti vierekkäin */
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 20px;
+      flex-grow: 1;
+    }
+
+    /* Kalenterin tyyli */
+    .calendar {
+      width: 320px;
+      background: #d3d3d3;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .month {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .month button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .month h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #333;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .weekdays, .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .weekdays div {
+      font-weight: bold;
+      padding: 5px 0;
+      color: #444;
+    }
+
+    .days div {
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .days div:hover {
+      background-color: #e0f2fe;
+    }
+
+    .today {
+      background-color: #0077cc;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Oikean puolen teksti */
+    .info-box {
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .info-box h2 {
+      color: #0046b3;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      color: #333;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    /* Alapalkki */
+    footer {
+      background-color: #0046b3;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 14px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#">Etusivu</a> | 
+    <a href="#">Palvelut</a> | 
+    <a href="#">Yhteystiedot</a>
+  </div>
+
+  <h1>Ajanvarauskalenteri</h1>
+
+  <div class="content">
+    <!-- Kalenteri -->
+    <div class="calendar">
+      <div class="month">
+        <button id="prev">&#10094;</button>
+        <h2 id="month-year"></h2>
+        <button id="next">&#10095;</button>
+      </div>
+      <div class="weekdays">
+        <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+      </div>
+      <div class="days" id="days"></div>
+    </div>
+
+    <!-- Tekstialue -->
+    <div class="info-box">
+      <h2>Hieronta Kokkola</h2>
+      <p>
+        Rela-hierojien Kokkolan vastaanottomme palvelee neljän hoitohuoneen voimin
+        kauppakeskus Chydeniassa. Vastaanottomme löydät kauppakeskus Chydenian
+        alimmasta kerroksesta KappAhlin vastapäätä. Carpark1 samassa rakennuksessa,
+        jossa parkkikiekolla saa 3h ilmaista pysäköintiaikaa.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Rela Hierojat – Kaikki oikeudet pidätetään
+  </footer>
+
+  <script>
+    const monthYear = document.getElementById('month-year');
+    const daysContainer = document.getElementById('days');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    let currentDate = new Date();
+
+    function renderCalendar(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const firstWeekDay = (firstDay.getDay() + 6) % 7;
+
+      const monthNames = [
+        "Tammikuu","Helmikuu","Maaliskuu","Huhtikuu","Toukokuu","Kesäkuu",
+        "Heinäkuu","Elokuu","Syyskuu","Lokakuu","Marraskuu","Joulukuu"
+      ];
+
+      monthYear.textContent = `${monthNames[month]} ${year}`;
+      daysContainer.innerHTML = "";
+
+      for (let i = 0; i < firstWeekDay; i++) {
+        daysContainer.innerHTML += `<div></div>`;
+      }
+
+      for (let day = 1; day <= lastDay.getDate(); day++) {
+        const isToday = 
+          day === new Date().getDate() &&
+          month === new Date().getMonth() &&
+          year === new Date().getFullYear();
+        daysContainer.innerHTML += `<div class="${isToday ? 'today' : ''}">${day}</div>`;
+      }
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar(currentDate);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar(currentDate);
+    });
+
+    renderCalendar(currentDate);
+  </script>
+</body>
+</html>
