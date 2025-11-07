@@ -1,0 +1,191 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+
+nav {
+  background-color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0077cc;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  color: #333;
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+/* Kalenteri */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.calendar {
+  width: 90%;
+  max-width: 400px;
+  background: rgb(196, 195, 195);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.month button:hover {
+  color: #0077cc;
+}
+
+.month h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.weekdays div {
+  font-weight: bold;
+  padding: 5px 0;
+  color: #444;
+}
+
+.days div {
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.days div:hover {
+  background-color: #e0f2fe;
+}
+
+.today {
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+}
+
+/* Etusivun teksti */
+.info-box {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.info-box h1 {
+  font-size: 2.4rem;
+  color: #333;
+}
+
+.info-box p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #0077cc;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-logo h2 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 8px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}

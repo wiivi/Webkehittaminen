@@ -8,41 +8,40 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">Etusivu</a> | 
-    <a href="kalenteri.html">Ajanvaraus</a> | 
+    <a href="etusivu.html">Etusivu</a> | 
+    <a href="index.html">Ajanvaraus</a> | 
     <a href="#">Yhteystiedot</a>
+  </nav>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css">
+  <title>Ajanvarauskalenteri</title>
+</head>
+
+<body>
+  <!--testaus että toimiiko git hommat-->
+  <nav>
+    <a href="../index.html">Etusivu</a> |
+    <a href="../henkilokunta.html">Henkilökunta</a> |
+    <a href="">Palvelut</a>
+    <a href="">Yhteystiedot</a>
   </nav>
 
   <h1>Ajanvarauskalenteri</h1>
-
-  <div class="content">
-    <div class="calendar">
-      <div class="month">
-        <button id="prev">&#10094;</button>
-        <h2 id="month-year"></h2>
-        <button id="next">&#10095;</button>
-      </div>
-      <div class="weekdays">
-        <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
-      </div>
-      <div class="days" id="days"></div>
+  <div class="calendar">
+    <div class="month">
+      <button id="prev">&#10094;</button>
+      <h2 id="month-year"></h2>
+      <button id="next">&#10095;</button>
     </div>
+    <div class="weekdays">
+      <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+    </div>
+    <div class="days" id="days"></div>
   </div>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <h2>Wnb-Hieronta</h2>
-        <p>Ota rohkeasti aikaa itsellesi!</p>
-        <p>Isokatu 3, 67200 Kokkola</p>
-        <p><a href="mailto:wnb-hieronta@gmail.com">wnb-hieronta@gmail.com</a></p>
-        <p>0600-12345 (0,39 €/min+pvm) ma–pe 9–17</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Wnb-hieronta Oy | Design by Wnb-koodarit
-    </div>
-  </footer>
 
   <script>
     const monthYear = document.getElementById('month-year');
@@ -55,9 +54,10 @@
     function renderCalendar(date) {
       const year = date.getFullYear();
       const month = date.getMonth();
+
       const firstDay = new Date(year, month, 1);
       const lastDay = new Date(year, month + 1, 0);
-      const firstWeekDay = (firstDay.getDay() + 6) % 7;
+      const firstWeekDay = (firstDay.getDay() + 6) % 7; // Ma=0, Su=6
 
       const monthNames = [
         "Tammikuu","Helmikuu","Maaliskuu","Huhtikuu","Toukokuu","Kesäkuu",
@@ -65,6 +65,7 @@
       ];
 
       monthYear.textContent = `${monthNames[month]} ${year}`;
+
       daysContainer.innerHTML = "";
 
       for (let i = 0; i < firstWeekDay; i++) {
@@ -92,5 +93,7 @@
 
     renderCalendar(currentDate);
   </script>
+
+  
 </body>
 </html>
