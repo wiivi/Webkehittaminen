@@ -91,8 +91,42 @@
         <dd>Landmarks, labels, focus states</dd>
       </div>
     </dl>
+    <section id="contact" aria-labelledby="contact-title" class="mt-8">
+  <h3 id="contact-title" class="text-lg font-semibold">Contact us</h3>
+  <form class="mt-4 space-y-4" action="#" method="post">
+    <div>
+      <label for="name" class="block text-sm font-medium">Name</label>
+      <input id="name" name="name" type="text" required
+             class="mt-1 w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" >
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium">Email</label>
+      <input id="email" name="email" type="email" required
+             class="mt-1 w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" >
+    </div>
+    <button type="submit"
+            class="inline-flex items-center rounded bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+      Send
+    </button>
+  </form>
+</section>
   </aside>
 </div>
 </main>
+<footer class="mt-12 border-t bg-white">
+  <div class="mx-auto max-w-5xl px-4 py-6">
+    <address class="not-italic text-sm text-gray-600">
+      Basics of Web Development · Centria UAS · Kokkola, Finland
+    </address>
+    <p class="text-sm text-gray-600 mt-2">
+      © <span id="year"></span> Course Materials. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Non-critical enhancement
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
