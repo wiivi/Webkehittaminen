@@ -5,7 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Semantic Demo | Tailwind via CDN</title>
   <meta name="description" content="A minimal, semantic, and accessible HTML page using Tailwind CSS via CDN.">
+  <script>
+    (function () {
+      const KEY = 'color-scheme';
+      const saved = localStorage.getItem(KEY);                 // 'dark' | 'light' | null
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = saved ? saved === 'dark' : prefersDark;  // default to OS if not saved
+      document.documentElement.classList.toggle('dark', useDark);
+      // optional: expose helper for debugging
+      window.__theme = { KEY, get: () => localStorage.getItem(KEY) };
+    })();
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border rounded px-3 py-2">
@@ -37,6 +50,12 @@
       This page demonstrates a clean structure using semantic elements:
       <strong>header</strong>, <strong>nav</strong>, <strong>main</strong>, <strong>article</strong>, <strong>section</strong>, <strong>aside</strong>, and <strong>footer</strong>.
     </p>
+     <button id="toggle"
+            type="button"
+            class="rounded border px-4 py-2 bg-gray-50 border-gray-300 hover:bg-gray-100
+                   dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600">
+      Toggle theme
+    </button>
   </section>
   <div class="grid gap-8 md:grid-cols-[2fr_1fr]">
   <article aria-labelledby="article-title" class="bg-white border rounded-lg shadow-sm p-6">
@@ -128,5 +147,22 @@
   // Non-critical enhancement
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<script>
+    (function () {
+      const KEY = 'color-scheme';
+      const root = document.documentElement;
+      const btn = document.getElementById('toggle');
+
+      function setTheme(isDark) {
+        root.classList.toggle('dark', isDark);
+        localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+      }
+
+      btn.addEventListener('click', () => {
+        const isDark = root.classList.contains('dark');
+        setTheme(!isDark);
+      });
+    })();
+  </script>
 </body>
 </html>
