@@ -2,124 +2,80 @@
 Author: Wiivi Röning
 Date: 2025-11-21
 -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EasyRide Bike Rentals</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeEasy</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-  <div class="logo">
-    <img src="logo.png" alt="RideEasy Logo">
-    <h1>EasyRide</h1>
-  </div>
+
+  <header>BikeEasy</header>
 
   <nav>
-    <a href="#">Meistä</a>
-    <a href="#">Pyörät</a>
-    <a href="#">Yhteystiedot</a>
-    <a href="#">Hinta</a>
+    <ul>
+    <a href="index.html">Etusivu</a> | 
+    <a href="vuokraus.html">Pyörän vuokraus</a> |
+    <a href="hinnasto.html">Hinnasto</a> |
+    <a href="">Yhteystiedot</a>
+    </ul>
   </nav>
 
-  </header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h2>Easy and Flexible Bike Rentals</h2>
-
-    <div class="hero-buttons">
-      <a href="#" class="hero-btn">City Bikes</a>
-      <a href="#" class="hero-btn">Mountain Bikes</a>
-      <a href="#" class="hero-btn">E-Bikes</a>
-      <a href="#" class="hero-btn">Accessories</a>
-    </div>
-  </div>
-</section>
-
-<main>
-
-  <!-- About -->
-  <section class="about">
-    <h2>About RideEasy</h2>
+  <div class="info-box">
+    <h1>BikeEasy</h1>
+    <h2>Helppoa ja joustavaa vuokraus Kokkolasta</h2>
     <p>
-      We believe biking is the easiest, greenest, and most enjoyable way to move.
-      RideEasy helps commuters, travelers, and explorers rent high-quality bikes
-      without the cost of ownership.
+      Vuokraa laadukas kaupunki-, sähkö- tai maastopyörä ja lähde liikkeelle omassa tahdissasi. 
+      Olitpa sitten matkalla töihin, tutkimassa kaupungin katuja tai etsimässä seikkailua metsäreiteillä, meiltä löydät juuri sinulle sopivan menopelin.
+      aupunkipyörät on mukava ja helppo tapa liikkua kaupungissa.
+      Sähköpyörät lisää vauhtia ja pidempiä matkoja vaivattomasti.
+      Maastopyörät sopivat seikkailuihin poluille ja luonnon keskelle.
+      Vuokraus on helppoa ja nopeaa varaa pyörä verkossa ja lähde nauttimaan matkasta!
+      Voit siirtyä <strong> pyörän vuokraus</strong>-sivulle varataksesi sopivan pyörän suoraan verkossa.
     </p>
-  </section>
+  </div>
 
-  <!-- Product Cards -->
-  <section>
-    <h2>Popular Rentals</h2>
-    <div class="products">
-
-      <article class="card">
-        <img src="city-bike.jpg" alt="City Bike">
-        <div class="card-content">
-          <h3>City Bikes</h3>
-          <p>Perfect for commuting comfortably and efficiently.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="mountain-bike.jpg" alt="Mountain Bike">
-        <div class="card-content">
-          <h3>Mountain Bikes</h3>
-          <p>Built for adventure—hills, trails, and everything in between.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="e-bike.jpg" alt="E-Bike">
-        <div class="card-content">
-          <h3>E-Bikes</h3>
-          <p>Extra power for longer distances and speed with ease.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section>
-    <h2>Why Ride With Us?</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>Eco-Friendly Travel</h3>
-        <p>Go green while exploring the city in comfort and style.</p>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>BikeEasy</h2>
+        <p>Ota rohkeasti yhteyttä!</p>
+        <p>Isokatu 3, 67200 Kokkola</p>
+        <p><a href="mailto:bikeeasy@gmail.com">bikeeasy@gmail.com</a></p>
+        <p>0600-12345 (0,39 €/min+pvm) ma–pe 9–17</p>
       </div>
-      <div class="feature-box">
-        <h3>Affordable & Flexible</h3>
-        <p>Rent by the hour, day, or week—no hidden fees.</p>
+
+      <div class="footer-column">
+        <h3>Vuokraamo Kokkolassa</h3>
+        <ul>
+          <li><a href="index.html">Pyörävuokraus</a></li>
+          <li><a href="#"> Sähkömaastopyörät</a></li>
+          <li><a href="#">Pyöräreitit</a></li>
+          <li><a href="#">Pyöräteline</a></li>
+           <li><a href="#">Hinnasto</a></li>
+        </ul>
       </div>
-      <div class="feature-box">
-        <h3>High Quality & Safe</h3>
-        <p>Bikes are regularly maintained and safety-checked.</p>
+
+      <div class="footer-column">
+        <h3>Yrityksemme</h3>
+        <ul>
+          <li><a href="#">Julkaisut</a></li>
+          <li><a href="#">Meille töihin</a></li>
+          <li><a href="#">Palaute</a></li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Ready to ride?</h2>
-    <a class="btn" href="#">Explore Our Bikes</a>
-  </section>
-
-</main>
-
-<footer>
-  <p>© 2025 RideEasy — All rights reserved.</p>
-  <p>
-    Contact us: <a href="mailto:hello@rideeasy.com">hello@rideeasy.com</a>
-  </p>
-</footer>
-
+    <div class="footer-bottom">
+      © 2025 BikeEasy Oy | Design by Wnb-koodarit
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
