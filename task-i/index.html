@@ -7,37 +7,77 @@ Date: 2025-11-21
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BikeEasy</title>
+  <title>BikeEasy – Helppoa pyörävuokrausta Kokkolassa</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header>BikeEasy</header>
 
+  <!-- ===== NAVIGATION ===== -->
   <nav>
     <ul>
-    <a href="index.html">Etusivu</a> | 
-    <a href="vuokraus.html">Pyörän vuokraus</a> |
-    <a href="hinnasto.html">Hinnasto</a> |
-    <a href="">Yhteystiedot</a>
+      <li><a href="index.html">Etusivu</a></li>
+      <li><a href="vuokraus.html">Pyörän vuokraus</a></li>
+      <li><a href="hinnasto.html">Hinnasto</a></li>
+      <li><a href="#">Yhteystiedot</a></li>
     </ul>
   </nav>
 
-  <div class="info-box">
-    <h1>BikeEasy</h1>
-    <h2>Helppoa ja joustavaa vuokraus Kokkolasta</h2>
-    <p>
-      Vuokraa laadukas kaupunki-, sähkö- tai maastopyörä ja lähde liikkeelle omassa tahdissasi. 
-      Olitpa sitten matkalla töihin, tutkimassa kaupungin katuja tai etsimässä seikkailua metsäreiteillä, meiltä löydät juuri sinulle sopivan menopelin.
-      aupunkipyörät on mukava ja helppo tapa liikkua kaupungissa.
-      Sähköpyörät lisää vauhtia ja pidempiä matkoja vaivattomasti.
-      Maastopyörät sopivat seikkailuihin poluille ja luonnon keskelle.
-      Vuokraus on helppoa ja nopeaa varaa pyörä verkossa ja lähde nauttimaan matkasta!
-      Voit siirtyä <strong> pyörän vuokraus</strong>-sivulle varataksesi sopivan pyörän suoraan verkossa.
-    </p>
-  </div>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Pyöräile vapaasti – BikeEasy</h1>
+      <p>Helppoa ja joustavaa pyörävuokrausta Kokkolassa</p>
+      <a href="vuokraus.html" class="cta-button">Tutustu pyöriin</a>
+    </div>
+  </section>
 
+  <main>
+    <!-- ===== ABOUT / INFO SECTION ===== -->
+    <section class="info-box">
+      <h1>Tervetuloa BikeEasy-vuokraamoon</h1>
+      <h2>Liiku vapaasti, vastuullisesti ja helposti</h2>
+      <p>
+        Vuokraa laadukas kaupunki-, sähkö- tai maastopyörä ja lähde liikkeelle omassa tahdissasi. 
+        Olitpa sitten matkalla töihin, tutkimassa kaupungin katuja tai etsimässä seikkailua metsäreiteillä, meiltä löydät juuri sinulle sopivan menopelin.
+        <br><br>
+        Kaupunkipyörät ovat mukava ja helppo tapa liikkua kaupungissa.
+        Sähköpyörät tuovat vauhtia ja helpottavat pidempiä matkoja.
+        Maastopyörät taas sopivat täydellisesti luonnon ja polkujen ystäville.
+        <br><br>
+        Vuokraus on helppoa ja nopeaa – varaa pyörä verkossa ja lähde nauttimaan matkasta!
+      </p>
+    </section>
+
+    <!-- ===== PRODUCT HIGHLIGHTS ===== -->
+    <section class="bikes">
+      <h2>Valikoimamme</h2>
+      <div class="bike-grid">
+        <article>
+          <img src="images/murillo-de-paula-o2FCfhNSjPo-unsplash.jpg" alt="Kaupunkipyörä">
+          <h3>Kaupunkipyörät</h3>
+          <p>Kevyet ja käytännölliset pyörät mukavaan kaupunkiajeluun.</p>
+        </article>
+        <article>
+          <img src="images/coen-van-de-broek-OFyh9TpMyM8-unsplash.jpg" alt="Sähköpyörä">
+          <h3>Sähköpyörät</h3>
+          <p>Tehoa ja mukavuutta pidemmille matkoille vaivattomasti.</p>
+        </article>
+        <article>
+          <img src="images/chris-henry-tmTVxOjdV8I-unsplash.jpg" alt="Maastopyörä">
+          <h3>Maastopyörät</h3>
+          <p>Täydelliset pyörät seikkailuihin poluille ja luonnon keskelle.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-container">
       <div class="footer-logo">
@@ -45,17 +85,17 @@ Date: 2025-11-21
         <p>Ota rohkeasti yhteyttä!</p>
         <p>Isokatu 3, 67200 Kokkola</p>
         <p><a href="mailto:bikeeasy@gmail.com">bikeeasy@gmail.com</a></p>
-        <p>0600-12345 (0,39 €/min+pvm) ma–pe 9–17</p>
+        <p>0600-12345 </p>
       </div>
 
       <div class="footer-column">
         <h3>Vuokraamo Kokkolassa</h3>
         <ul>
           <li><a href="index.html">Pyörävuokraus</a></li>
-          <li><a href="#"> Sähkömaastopyörät</a></li>
+          <li><a href="#">Sähkömaastopyörät</a></li>
           <li><a href="#">Pyöräreitit</a></li>
-          <li><a href="#">Pyöräteline</a></li>
-           <li><a href="#">Hinnasto</a></li>
+          <li><a href="#">Pyörätelineet</a></li>
+          <li><a href="#">Hinnasto</a></li>
         </ul>
       </div>
 
@@ -77,5 +117,6 @@ Date: 2025-11-21
       </div>
     </div>
   </footer>
+
 </body>
 </html>
