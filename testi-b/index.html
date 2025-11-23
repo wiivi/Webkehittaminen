@@ -3,12 +3,14 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wnb-hieronta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="index.css">
+  <title>Ajanvarauskalenteri</title>
 </head>
+
 <body>
-   <!--navigointi-->
+
+  <!--navigointi-->
   <nav>
 <ul class="navbar">
   <li> <a href="etusivu.html">Etusivu</a> </li>
@@ -18,16 +20,100 @@
 </ul>
   </nav>
 
-  <div class="info-box">
-    <h1>Tervetuloa Wnb-hierontaan</h1>
-    <p>
-      Wnb-hieronta Kokkolan vastaanotto palvelee neljän hoitohuoneen voimin Isokadulla.  
-      Löydät täältä tietoa palveluistamme, hinnoista ja yhteystiedoista.  
-      Voit siirtyä <strong>Ajanvaraus</strong>-sivulle varataksesi hieronta-ajan suoraan verkossa.
-    </p>
+  <h1>Ajanvarauskalenteri</h1>
+  <div class="calendar">
+    <div class="month">
+      <button id="prev">&#10094;</button>
+      <h2 id="month-year"></h2>
+      <button id="next">&#10095;</button>
+    </div>
+    <div class="weekdays">
+      <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+    </div>
+    <div class="days" id="days"></div>
   </div>
 
-  <footer>
+  <script>
+    const monthYear = document.getElementById('month-year');
+    const daysContainer = document.getElementById('days');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    let currentDate = new Date();
+
+    function renderCalendar(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const firstWeekDay = (firstDay.getDay() + 6) % 7; // Ma=0, Su=6
+
+      const monthNames = [
+        "Tammikuu","Helmikuu","Maaliskuu","Huhtikuu","Toukokuu","Kesäkuu",
+        "Heinäkuu","Elokuu","Syyskuu","Lokakuu","Marraskuu","Joulukuu"
+      ];
+
+      monthYear.textContent = `${monthNames[month]} ${year}`;
+
+      daysContainer.innerHTML = "";
+
+      for (let i = 0; i < firstWeekDay; i++) {
+        daysContainer.innerHTML += `<div></div>`;
+      }
+
+      for (let day = 1; day <= lastDay.getDate(); day++) {
+        const isToday = 
+          day === new Date().getDate() &&
+          month === new Date().getMonth() &&
+          year === new Date().getFullYear();
+        daysContainer.innerHTML += `<div class="${isToday ? 'today' : ''}">${day}</div>`;
+      }
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar(currentDate);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar(currentDate);
+    });
+
+    renderCalendar(currentDate);
+  </script>
+
+<div>
+<form action="">
+            <label for="first">
+                Käyttäjätunnus:
+            </label>
+            <input type="text" id="first" name="first" 
+                placeholder="Kirjoita käyttäjätunnus" required>
+
+            <label for="password">
+                Salasana:
+            </label>
+            <input type="password" id="password" name="password" 
+                placeholder="Syötä salasana" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Kirjaudu sisään
+                </button>
+            </div>
+        </form>
+        
+        <p>Etkö ole vielä rekisteröitynyt?
+            <a href="#" style="text-decoration: none;">
+                Rekisteröidy tästä.
+            </a>
+        </p>
+    </div>  
+</div>
+
+<footer>
     <div class="footer-container">
       <div class="footer-logo">
         <h2>Wnb-Hieronta</h2>
@@ -65,5 +151,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>
