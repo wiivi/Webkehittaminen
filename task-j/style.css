@@ -1,0 +1,396 @@
+/*
+Author: Wiivi Röning
+Date: 2025-11-21
+*/
+
+:root {
+  /* 🎨 Color palette */
+  --primary: #0077cc;
+  --primary-light: #4da8e8;
+  --text-dark: #333;
+  --text-light: #fff;
+  --bg-light: #f9fafb;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--bg-light);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+header {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+  background-color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: url("images/jay-kudva-IE9PKXWpRGU-unsplash.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.hero::after {
+  /* Dark overlay for readability */
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-light);
+}
+
+/* ================= INFO BOX ================= */
+.info-box {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.info-box h1 {
+  font-size: 2.4rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.info-box h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.info-box p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ================= BIKE GRID (product section) ================= */
+.bikes {
+  padding: 60px 20px;
+  background-color: #eef6fc;
+  text-align: center;
+}
+
+.bikes h2 {
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bike-grid article {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.bike-grid article:hover {
+  transform: translateY(-5px);
+}
+
+.bike-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.bike-grid h3 {
+  color: var(--primary);
+  margin: 15px 0 10px;
+}
+
+.bike-grid p {
+  padding: 0 15px 20px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-logo h2 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+}
+
+.footer-logo p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 8px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .info-box {
+    padding: 10px;
+  }
+}
+/* ================= CATALOG PAGE ================= */
+.intro {
+  text-align: center;
+  padding: 60px 20px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro h1 {
+  color: var(--primary);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Product Grid */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.catalog-grid article {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.catalog-grid article:hover {
+  transform: translateY(-5px);
+}
+
+.catalog-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.catalog-grid h2 {
+  color: var(--primary);
+  margin: 15px 0 8px;
+  font-size: 1.3rem;
+}
+
+.catalog-grid p {
+  margin: 0 15px 10px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Video Section */
+.video-section {
+  background-color: #eef6fc;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.video-section h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.video-section video {
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9-kuvasuhde */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Active nav link */
+nav a.active {
+  color: var(--primary-light);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
+}
