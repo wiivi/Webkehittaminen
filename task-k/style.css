@@ -202,7 +202,9 @@ footer {
   margin-top: auto;
   width: 100%;
 }
-
+html, body {
+  overflow-x: hidden; /* prevents horizontal scrolling */
+}
 .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
