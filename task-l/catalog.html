@@ -1,0 +1,139 @@
+<!--
+Author: Wiivi Röning
+Date: 2025-12-05
+-->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeEasy Katalogi – Vuokraa pyörä helposti</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>BikeEasy</header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Etusivu</a></li>
+      <li><a href="catalog.html" class="active">Pyörän vuokraus</a></li>
+      <li><a href="hinnasto.html">Hinnasto</a></li>
+      <li><a href="order.html">Tee varaus</a></li>
+      <li><a href="#">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ===== INTRO ===== -->
+      <section class="intro">
+      <h1>Pyörävuokrauksen katalogi</h1>
+      <img src="images/example.jpg" alt="Esimerkkikuva auringonlaskusta" width="400" height="300">
+      <p>Tutustu laajaan valikoimaamme! Vuokraamme kaupunki-, sähkö- ja maastopyöriä sekä varusteita eri tarpeisiin. Kaikki pyörämme ovat huollettuja ja valmiita ajoon.</p> 
+    </section>
+
+
+
+    <!-- ===== PRODUCT GRID ===== -->
+    <section class="catalog-grid">
+      <article>
+        <img src="images/murillo-de-paula-o2FCfhNSjPo-unsplash.jpg" alt="Punainen kaupunkipyörä Kokkolassa" loading="lazy" width="400" height="300">
+        <h2>Kaupunkipyörä</h2>
+        <p>Kevyt ja helppokäyttöinen pyörä kaupungin kaduille ja arkimenoihin.</p>
+        <p class="price">39 €/pv, 120 €/vk</p>
+      </article>
+
+      <article>
+        <img src="images/coen-van-de-broek-OFyh9TpMyM8-unsplash.jpg" alt="Sähköpyörä vuokralle Kokkolasta" loading="lazy" width="400" height="300">
+        <h2>Sähköpyörä</h2>
+        <p>Vauhtia ja mukavuutta pidemmille matkoille sähköavusteisesti.</p>
+        <p class="price">59 €/pv, 199 €/vk</p>
+      </article>
+
+      <article>
+        <img src="images/chris-henry-tmTVxOjdV8I-unsplash.jpg" alt="Maastopyörä polulla" loading="lazy" width="400" height="300">
+        <h2>Maastopyörä</h2>
+        <p>Kestävä ja ketterä pyörä haastaville reiteille ja maastoon.</p>
+        <p class="price">49 €/pv, 160 €/vk</p>
+      </article>
+
+      <article>
+        <img src="images/haydn-golden-UNirD0pXblg-unsplash.jpg" alt="Lastenpyörä vuokralle" loading="lazy" width="400" height="300">
+        <h2>Lastenpyörä</h2>
+        <p>Turvallinen ja kevyt pyörä perheen pienimmille seikkailijoille.</p>
+        <p class="price">25 €/pv, 80 €/vk</p>
+      </article>
+
+      <article>
+        <img src="images/igor-voronetski-S9M9AaB2ODw-unsplash.jpg" alt="Pyöräilykypärä vuokralle" loading="lazy" width="400" height="300">
+        <h2>Pyöräilykypärä</h2>
+        <p>Laadukas ja mukava kypärä turvalliseen ajoon kaikilla pyörillä.</p>
+        <p class="price">5 €/pv, 20 €/vk</p>
+      </article>
+
+      <article>
+        <img src="images/josh-marty-rim14IcsjuQ-unsplash.jpg" alt="Lastenistuin polkupyörään" loading="lazy" width="400" height="300">
+        <h2>Lastenistuin</h2>
+        <p>Kätevä ja turvallinen lisävaruste perhepyöräilyyn.</p>
+        <p class="price">10 €/pv, 30 €/vk</p>
+      </article>
+    </section>
+
+    <!-- ===== VIDEO SECTION ===== -->
+     <section class="video-section">
+      <h2>Pyörän turvallinen käyttö</h2>
+      <video controls preload="metadata" poster="images/videonkuva.png" width="640" height="360">
+        <source src="videos/istockphoto-1058701732-640_adpp_is.mp4" type="video/mp4">
+        <track src="captions/bike-tips-fi.vtt" kind="captions" srclang="fi" label="Suomi">
+        Selaimesi ei tue videoelementtiä.
+      </video>
+      <p>Katso lyhyt video turvallisesta ja vastuullisesta pyöräilystä ennen liikkeellelähtöä.</p>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>BikeEasy</h2>
+        <p>Ota rohkeasti yhteyttä!</p>
+        <p>Isokatu 3, 67200 Kokkola</p>
+        <p><a href="mailto:bikeeasy@gmail.com">bikeeasy@gmail.com</a></p>
+        <p>0600-12345 </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Vuokraamo Kokkolassa</h3>
+        <ul>
+          <li><a href="index.html">Pyörävuokraus</a></li>
+          <li><a href="#">Sähkömaastopyörät</a></li>
+          <li><a href="#">Pyöräreitit</a></li>
+          <li><a href="#">Pyörätelineet</a></li>
+          <li><a href="#">Hinnasto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Yrityksemme</h3>
+        <ul>
+          <li><a href="#">Julkaisut</a></li>
+          <li><a href="#">Meille töihin</a></li>
+          <li><a href="#">Palaute</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 BikeEasy Oy | Design by Wnb-koodarit
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

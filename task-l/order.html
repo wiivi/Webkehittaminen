@@ -1,0 +1,146 @@
+<!--
+Author: Wiivi Röning
+Date: 2025-12-05
+-->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeEasy – Tee pyörävaraus</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>BikeEasy</header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Etusivu</a></li>
+      <li><a href="catalog.html">Katalogi</a></li>
+      <li><a href="hinnasto.html">Hinnasto</a></li>
+      <li><a href="order.html" class="active">Tee varaus</a></li>
+      <li><a href="#">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ===== INTRO ===== -->
+    <section class="intro">
+      <h1>Tee pyörävaraus helposti</h1>
+      <p>Voit varata haluamasi pyörän tällä lomakkeella. Täytä yhteystietosi, valitse pyörämalli ja vuokra-aika – otamme sinuun yhteyttä vahvistuksen saatuamme.</p>
+    </section>
+
+    <!-- ===== ORDER FORM ===== -->
+    <section class="order-section">
+      <form action="thanks.html" method="post" class="order-form">
+        
+        <!-- Customer Info -->
+        <fieldset>
+          <legend>Asiakastiedot</legend>
+
+          <label for="name">Koko nimi *</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Sähköposti *</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Puhelinnumero *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+358 40 123 4567">
+        </fieldset>
+
+        <!-- Rental Details -->
+        <fieldset>
+          <legend>Vuokraustiedot</legend>
+
+          <label for="item">Vuokrattava pyörä *</label>
+          <select id="item" name="item" required>
+            <option value="">– Valitse pyörä –</option>
+            <option>Kaupunkipyörä</option>
+            <option>Sähköpyörä</option>
+            <option>Maastopyörä</option>
+            <option>Lastenpyörä</option>
+            <option>Pyöräilykypärä</option>
+            <option>Lastenistuin</option>
+          </select>
+
+          <label for="start">Aloituspäivä *</label>
+          <input type="date" id="start" name="start" required>
+
+          <label for="end">Lopetuspäivä *</label>
+          <input type="date" id="end" name="end" required>
+
+          <label for="quantity">Määrä *</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+        </fieldset>
+
+        <!-- Additional Info -->
+        <fieldset>
+          <legend>Lisätiedot ja suostumus</legend>
+
+          <label for="message">Lisätiedot / toiveet</label>
+          <textarea id="message" name="message" rows="4" placeholder="Kerro esimerkiksi haluamasi lisävarusteista..."></textarea>
+
+          <label>
+            <input type="checkbox" name="terms" required>
+            Hyväksyn vuokrausehdot ja tietosuojaselosteen *
+          </label>
+
+          <label>
+            <input type="checkbox" name="newsletter">
+            Haluan tilata uutiskirjeen
+          </label>
+        </fieldset>
+
+        <button type="submit" class="cta-button">Lähetä varauspyyntö</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>BikeEasy</h2>
+        <p>Ota rohkeasti yhteyttä!</p>
+        <p>Isokatu 3, 67200 Kokkola</p>
+        <p><a href="mailto:bikeeasy@gmail.com">bikeeasy@gmail.com</a></p>
+        <p>0600-12345</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Vuokraamo Kokkolassa</h3>
+        <ul>
+          <li><a href="index.html">Pyörävuokraus</a></li>
+          <li><a href="#">Sähkömaastopyörät</a></li>
+          <li><a href="#">Pyöräreitit</a></li>
+          <li><a href="#">Pyörätelineet</a></li>
+          <li><a href="#">Hinnasto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Yrityksemme</h3>
+        <ul>
+          <li><a href="#">Julkaisut</a></li>
+          <li><a href="#">Meille töihin</a></li>
+          <li><a href="#">Palaute</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 BikeEasy Oy | Design by Wnb-koodarit
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
